@@ -1,4 +1,3 @@
-import java.text.BreakIterator;
 import java.util.Random;
 
 // This recipe adds random numbers until the sum is exactly 2018!!!
@@ -8,6 +7,8 @@ public class HappyNewYear {
 	public static void main(String[] args) {
 		// 1. Make a variable 'newYear' and initialize it to 2018.
 		int newYear = 2018;
+		int worst = 0;
+		int best = 0;
 
 		// 7. Repeat steps 2 to 6 (10 times)
 		for (int f = 0; f < 12; f++) {
@@ -33,13 +34,23 @@ public class HappyNewYear {
 				// to the console and use the "break" statement to exit the loop
 				if (sum == newYear) {
 					System.out.println("It took you " + i + " tries to get to the new year!");
+if(i > worst) {
+	worst = i;
+}
+if(best == 0 || i < best) {
+	best = i;
+}
 					break;
+
 				}
+
 			}
+
 		}
 
 		// *** BONUS: Keep track of your best score and worst score, and print
 		// the results to the console.
-
+		System.out.println("Your worst score was " + worst);
+		System.out.println("Your best score was " + best);
 	}
 }
